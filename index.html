@@ -40,7 +40,7 @@
     .logotype{display:flex;align-items:center;gap:14px;min-width:200px}
     .logomark{display:grid;place-items:center;width:42px;height:42px;border:1px solid rgba(220,184,121,.55);font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px;letter-spacing:-.06em;color:var(--gold);position:relative}
     .logomark:after{content:'';position:absolute;right:-4px;top:-4px;width:8px;height:8px;background:var(--red)}
-    .brandname{font-family:'Barlow Condensed';font-size:22px;font-weight:800;letter-spacing:.035em;text-transform:uppercase;line-height:1}
+    .brandname{font-family:'Barlow Condensed','Arial Narrow',Impact,sans-serif;font-size:22px;font-weight:800;letter-spacing:.035em;text-transform:uppercase;line-height:1}
     .brandmeta{margin-top:4px;color:#a7acb2;font-size:8px;letter-spacing:.22em;text-transform:uppercase}
     .navlinks{display:flex;align-items:center;gap:34px;color:#d1d4da;font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase}
     .navlinks a{transition:color .2s}.navlinks a:hover{color:var(--gold)}
@@ -173,6 +173,114 @@
     @media(max-width:800px){.wrap{width:calc(100% - 42px)}.nav{height:66px;padding:0 21px}.brandname{font-size:20px}.logotype{gap:10px}.logomark{width:35px;height:35px;font-size:19px}.navlinks{display:none;position:absolute;top:66px;right:0;left:0;background:#070d15;padding:22px;flex-direction:column;align-items:flex-start;gap:25px;border-top:1px solid var(--line)}.navlinks.open{display:flex}.menubtn{display:block}.nav .nav-btn{display:none}.hero{min-height:790px;height:100svh}.hero-photo{background-position:63% 34%}.hero:after{background:linear-gradient(90deg,rgba(5,10,18,.92),rgba(5,10,18,.53) 66%,rgba(5,10,18,.20)),linear-gradient(0deg,#071019,transparent 24%,rgba(7,13,22,.15))}.hero h1{font-size:clamp(85px,15vw,139px)}.hero p{font-size:14px;max-width:440px}.hero-aside{display:none}.hero-bottom-inner{min-height:74px}.hb-item{padding:12px 19px}.hb-item:first-child{padding-left:0}.hb-num{font-size:28px}.hb-copy{font-size:8px}.hb-item:last-of-type{display:none}.scroll-mark{display:none}.sectionhead{display:block;margin-bottom:38px}.sectionhead p{margin-top:25px}.history{padding-top:90px}.history-title{margin-bottom:40px}.history-main{grid-template-columns:1fr}.history-image img{height:600px;min-height:0}.history-story{padding:50px 32px}.real{padding:85px 0}.real-layout{grid-template-columns:1fr;gap:65px}.real-photo{max-width:680px}.timeline{padding:90px 0 95px}.capabilities{padding:90px 0}.cap-grid{grid-template-columns:1fr}.cap{min-height:245px}.cap h3{font-size:42px}.manifesto{min-height:600px;padding:100px 0}.contact{padding:90px 0}.contact-grid{grid-template-columns:1fr;gap:25px}.contact aside{max-width:570px}.footer-inner{align-items:flex-start;flex-direction:column}.demo-chip{bottom:12px;right:12px}.cinema-body{left:6%;right:6%}.cinema h2{font-size:clamp(91px,18vw,160px)}}
     @media(max-width:520px){.eyebrow{font-size:9px;letter-spacing:.23em}.hero{min-height:730px}.hero-content{transform:translateY(-20px)}.hero-photo{background-position:59% 45%}.hero:after{background:linear-gradient(90deg,rgba(5,10,18,.87),rgba(5,10,18,.45)),linear-gradient(0deg,#071019,transparent 27%,rgba(7,13,22,.3))}.hero h1{font-size:clamp(75px,20.3vw,115px)}.hero p{font-size:13px;margin:20px 0 26px;line-height:1.8}.btn{padding:14px 15px;font-size:9px;gap:8px}.hero-actions{gap:9px}.hero-bottom-inner{min-height:69px}.hb-item{padding:13px 11px}.hb-num{font-size:26px}.hb-copy{font-size:7px;letter-spacing:.08em}.sectionhead h2{font-size:clamp(68px,17vw,106px)}.history-image img{height:540px}.history-story{padding:45px 23px}.history-story h3{font-size:68px}.score-inline b{font-size:68px}.score-inline{gap:15px}.real-copy h2{font-size:clamp(69px,17vw,102px)}.real-photo:before{inset:-11px 11px 11px -11px}.time-row{grid-template-columns:76px 1fr 18px;gap:12px;padding:27px 0}.time-year{font-size:30px}.time-name{font-size:24px}.time-desc{font-size:11px}.cap{padding:25px;min-height:220px}.cap h3{font-size:37px}.manifesto h2{font-size:clamp(77px,17vw,120px)}.manifesto p{font-size:14px}.contact h2{font-size:clamp(76px,18vw,119px)}.cinema h2{font-size:clamp(83px,19vw,124px)}.cinema-body{top:48%}.cinema-top{padding:23px 5%!important}.cinema-bottom{bottom:24px;gap:10px}.cinema-tag{font-size:10px}.cinema-sub{font-size:13px}.cinema-skip{font-size:9px}.cinema-end h3{font-size:clamp(80px,16vw,120px)}}
     @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
+
+    /* Authority Agents 3D MAX | Portada editorial v2: legible en pantallas reales */
+    .hero {height:auto;min-height:100svh;max-height:none;padding:112px 0 114px;display:flex;align-items:center;isolation:isolate;overflow:hidden;background:#080d14}
+    .hero-ambient {position:absolute;inset:0;z-index:-3;pointer-events:none;background:radial-gradient(ellipse at 83% 29%,rgba(191,108,64,.19),transparent 36%),radial-gradient(ellipse at 10% 80%,rgba(33,68,105,.28),transparent 44%),linear-gradient(120deg,#080d14,#101a24 75%,#080d14)}
+    .hero:before {content:'';position:absolute;inset:0;z-index:-2;pointer-events:none;opacity:.17;background:repeating-linear-gradient(90deg,transparent 0,transparent calc(25% - 1px),rgba(236,215,177,.25) calc(25% - 1px),rgba(236,215,177,.25) 25%)}
+    .hero:after{display:none}
+    .hero-layout{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(32px,4vw,72px);align-items:center;position:relative}
+    .hero-content{padding:0;transform:none;min-width:0;z-index:3}
+    .hero-topline{margin-bottom:20px}
+    .hero h1 {font-size:clamp(70px,7.8vw,115px);max-width:none;line-height:.91;letter-spacing:-.022em}
+    .hero h1 span{white-space:nowrap}
+    .hero h1 .outline{-webkit-text-stroke:1px rgba(255,255,255,.72)}
+    .hero p {max-width:440px;font-size:clamp(13px,1.05vw,15px);line-height:1.72;color:#c2ccd7;margin:23px 0 26px}
+    .hero-actions{gap:12px;align-items:center}
+    .hero .btn{font-size:10px;padding:15px 18px;min-height:49px;letter-spacing:.10em}
+    .hero-action-time{font-size:9px;opacity:.69;letter-spacing:.05em;margin-left:3px}
+    .hero-credit{margin-top:32px;display:flex;align-items:center;gap:14px;font-size:12px;letter-spacing:.13em;font-weight:700}
+    .hero-credit-rule{width:34px;height:1px;background:var(--gold);flex:none}
+    .hero-credit small{display:block;color:#8e9dad;font-size:9px;letter-spacing:.16em;line-height:2.4}
+    .hero-portrait{height:clamp(440px,70svh,650px);min-width:0;position:relative;overflow:hidden;border:1px solid rgba(231,198,144,.3);background:#1c2634;box-shadow:0 32px 95px rgba(0,0,0,.33)}
+    .hero-portrait:before{content:'';position:absolute;z-index:2;inset:14px;border:1px solid rgba(255,255,255,.13);pointer-events:none}
+    .hero-portrait img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 10%;filter:saturate(.94);animation:heroPortraitDrift 18s ease-in-out infinite alternate}
+    @keyframes heroPortraitDrift{from{transform:scale(1.0)}to{transform:scale(1.045)}}
+    .hero-portrait-fade{position:absolute;inset:0;background:linear-gradient(0deg,rgba(4,9,17,.90) 1%,rgba(4,9,17,.2) 29%,transparent 56%),linear-gradient(90deg,rgba(5,10,16,.15),transparent 38%);pointer-events:none}
+    .hero-portrait-caption{position:absolute;bottom:29px;left:29px;z-index:3;text-shadow:0 2px 18px rgba(0,0,0,.5)}
+    .hero-portrait-caption .eyebrow{color:#eac78b;font-size:9px;letter-spacing:.17em}
+    .hero-portrait-caption strong{display:block;margin-top:8px;font-family:'Barlow Condensed',Impact,sans-serif;font-weight:800;font-size:clamp(25px,2.7vw,39px);line-height:.95;letter-spacing:.01em}
+    .hero-score{position:absolute;z-index:4;top:24px;right:24px;width:136px;min-height:112px;padding:12px 11px;background:rgba(6,12,22,.88);backdrop-filter:blur(12px);border:1px solid rgba(240,198,125,.52);text-align:center;box-shadow:0 6px 25px rgba(0,0,0,.35)}
+    .hero-score span,.hero-score small{display:block;font-size:8px;font-weight:700;letter-spacing:.12em;color:#cfbd9d;white-space:nowrap}
+    .hero-score strong{display:block;font-family:'Barlow Condensed',Impact,sans-serif;font-size:51px;letter-spacing:.02em;line-height:1.07;margin:3px 0;color:#fff}
+    .hero-score strong i{font-style:normal;font-size:32px;color:var(--gold)}
+    .hero-score small{color:#d2dbe2;font-size:8px}
+    .hero-bottom{z-index:5;background:rgba(7,12,19,.90);border-top:1px solid rgba(231,198,144,.23)}
+    .hero-bottom-inner{min-height:76px}
+    .hero .hb-item{padding:14px 31px}
+    .hero .hb-item:first-child{padding-left:0}
+    .hero .hb-num{font-size:31px}
+    .hero .hb-copy{font-size:9px}
+    @media(min-width:801px) and (max-height:820px){
+      .hero{padding:88px 0 86px;min-height:100svh}
+      .hero-portrait{height:min(66svh,560px)}
+      .hero h1{font-size:clamp(67px,7.1vw,102px)}
+      .hero-topline{margin-bottom:15px}
+      .hero p{margin:17px 0 20px}
+      .hero-credit{margin-top:22px}
+      .hero-bottom-inner{min-height:64px}
+      .hero .hb-item{padding:10px 28px}
+    }
+    @media(min-width:801px) and (max-width:1120px){
+      .hero-layout{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:24px}
+      .hero h1{font-size:clamp(61px,7.5vw,85px)}
+      .hero .btn{padding:13px 14px}
+      .hero-credit{margin-top:20px}
+      .hero-score{width:121px;right:16px;top:16px}
+    }
+    @media(max-width:800px){
+      .hero{min-height:840px;height:auto;padding:0;display:flex;align-items:flex-end}
+      .hero:before{display:none}
+      .hero-layout{width:100%;display:flex;flex-direction:column;gap:0;position:static}
+      .hero-portrait{position:absolute;inset:0;width:100%;height:100%;z-index:-1;box-shadow:none;border:0;overflow:hidden}
+      .hero-portrait:before{display:none}
+      .hero-portrait img{object-fit:cover;object-position:center 0%;opacity:1}
+      .hero-portrait-fade{background:linear-gradient(180deg,rgba(5,10,18,.18) 0%,rgba(5,10,18,.03) 25%,rgba(5,10,18,.42) 43%,rgba(5,10,18,.90) 64%,#070c13 98%)}
+      .hero-portrait-caption{display:none}
+      .hero-score{right:22px;top:86px;width:112px;min-height:100px;padding:9px}
+      .hero-score strong{font-size:43px}
+      .hero-score span,.hero-score small{font-size:7px}
+      .hero-content{order:2;position:relative;width:calc(100% - 42px);margin:0 auto;padding:335px 0 114px;z-index:3;transform:none}
+      .hero-topline{margin-bottom:18px}
+      .hero h1{font-size:clamp(67px,13vw,102px);line-height:.9;max-width:680px}
+      .hero p{max-width:560px;font-size:14px;margin:18px 0 22px}
+      .hero-credit{margin-top:23px}
+      .hero-bottom-inner{min-height:65px;justify-content:space-between}
+      .hero .hb-item{padding:11px 13px}
+      .hero .hb-num{font-size:27px}
+      .hero .hb-copy{font-size:8px}
+      .hero-aside{display:none}
+    }
+    @media(max-width:520px){
+      .hero{min-height:790px}
+      .hero-content{width:calc(100% - 38px);padding:342px 0 98px}
+      .hero h1{font-size:clamp(56px,16.9vw,79px);line-height:.9}
+      .hero-topline{margin-bottom:13px}
+      .hero-topline .eyebrow{font-size:9px;letter-spacing:.17em}
+      .hero p{font-size:12px;line-height:1.62;max-width:370px;margin:13px 0 17px}
+      .hero-actions{gap:9px}
+      .hero .btn{font-size:9px;padding:11px 10px;min-height:44px;gap:7px}
+      .hero-action-time{display:none}
+      .hero-credit{display:none}
+      .hero-score{top:86px;right:19px;transform:scale(.81);transform-origin:top right}
+      .hero-bottom-inner{min-height:60px}
+      .hero .hb-item{gap:7px;padding:10px 8px}
+      .hero .hb-item:last-of-type{display:flex}
+      .hero .hb-num{font-size:24px}
+      .hero .hb-copy{font-size:7px;letter-spacing:.04em}
+      .scroll-mark{display:none}
+      .hero-portrait img{object-position:50% 0}
+    }
+    @media(max-width:360px){.hero h1{font-size:16.5vw}.hero .hb-item:last-of-type{display:none}.hero-actions{flex-wrap:wrap}.hero-content{padding-top:330px}}
+    @media(max-width:520px) and (max-height:730px){
+      .hero{min-height:710px}
+      .hero-content{padding-top:290px;padding-bottom:96px}
+      .hero p{font-size:11px;line-height:1.55}
+      .hero .btn{min-height:41px}
+      .hero h1{font-size:clamp(56px,16.9vw,75px)}
+    }
+    @media(prefers-reduced-motion:reduce){.hero-portrait img{animation:none}}
+
   </style>
 </head>
 <body>
@@ -184,18 +292,26 @@
   </header>
   <main>
     <section class="hero" id="inicio" aria-labelledby="heroTitle">
-      <div class="hero-photo" aria-hidden="true"></div><div class="hero-lines" aria-hidden="true"></div>
-      <div class="wrap hero-content">
-        <div class="hero-topline"><i></i><span class="eyebrow">Panamá · Concacaf · Bahamas 2017</span></div>
-        <h1 class="display" id="heroTitle"><span class="light">NO FUE</span><span class="outline">SOLO UNA</span><span class="accent">FINAL.</span></h1>
-        <p>Fue el comienzo de una página inédita para el fútbol playa panameño. Una historia de preparación, convicción y liderazgo. Y un entrenador detrás de ese momento.</p>
-        <div class="hero-actions">
-          <button class="btn btn-gold" data-play type="button"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5 20 12 7 19.5z"/></svg>Vivir la historia <span>16 s</span></button>
-          <a class="btn btn-border" href="#historia">Explorar su legado <span aria-hidden="true">↓</span></a>
+      <div class="hero-ambient" aria-hidden="true"></div>
+      <div class="wrap hero-layout">
+        <div class="hero-content">
+          <div class="hero-topline"><i></i><span class="eyebrow">PANAMÁ · CONCACAF · 2017</span></div>
+          <h1 class="display" id="heroTitle"><span class="light">NO FUE</span><span class="outline">SOLO UNA</span><span class="accent">FINAL.</span></h1>
+          <p>Panamá hizo historia en la arena. Detrás de aquella victoria hubo años de trabajo, decisiones difíciles y un entrenador que creyó en su equipo.</p>
+          <div class="hero-actions">
+            <button class="btn btn-gold" data-play type="button" aria-label="Reproducir el video de 16 segundos sobre Shubert Pérez"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5 20 12 7 19.5z"/></svg>Ver su historia <span class="hero-action-time">00:16</span></button>
+            <a class="btn btn-border" href="#historia">Conocer su legado <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="hero-credit"><span class="hero-credit-rule"></span><span>SHUBERT PÉREZ <small>DIRECTOR TÉCNICO · PANAMÁ</small></span></div>
+        </div>
+        <div class="hero-portrait">
+          <img src="assets/hero.webp" alt="Recreación cinematográfica de Shubert Pérez en un estadio de fútbol playa" fetchpriority="high" width="941" height="1672" decoding="async">
+          <div class="hero-portrait-fade" aria-hidden="true"></div>
+          <div class="hero-portrait-caption"><span class="eyebrow">UNA HISTORIA QUE TRASCIENDE LA CANCHA</span><strong>EL ENTRENADOR<br>DETRÁS DEL LOGRO.</strong></div>
+          <div class="hero-score"><span>CONCACAF · FINAL 2017</span><strong>4 <i>:</i> 2</strong><small>PANAMÁ / MÉXICO</small></div>
         </div>
       </div>
-      <div class="hero-aside">Una historia que merece ser contada</div>
-      <div class="hero-bottom"><div class="wrap hero-bottom-inner"><div class="hb-item"><strong class="hb-num gold">2017</strong><span class="hb-copy">El año que<br>hizo historia</span></div><div class="hb-item"><strong class="hb-num">4—2</strong><span class="hb-copy">Panamá vs.<br>México</span></div><div class="hb-item"><strong class="hb-num">01</strong><span class="hb-copy">Primer Mundial<br>de fútbol playa</span></div><span class="scroll-mark"><i></i>Deslizá para descubrir</span></div></div>
+      <div class="hero-bottom"><div class="wrap hero-bottom-inner"><div class="hb-item"><strong class="hb-num gold">2017</strong><span class="hb-copy">Un año<br>histórico</span></div><div class="hb-item"><strong class="hb-num">4—2</strong><span class="hb-copy">Panamá<br>México</span></div><div class="hb-item"><strong class="hb-num">01</strong><span class="hb-copy">Primer Mundial<br>de fútbol playa</span></div><span class="scroll-mark"><i></i>Explorá su trayectoria</span></div></div>
     </section>
     <section class="section history" id="historia">
       <div class="wrap history-title reveal"><div class="section-number">01 / EL MOMENTO</div><div class="sectionhead"><h2 class="display">UNA VICTORIA.<br><span class="outline">UNA PRIMERA VEZ.</span></h2><p>Hay resultados que duran un partido. Y hay otros que abren una puerta para todo un país.</p></div></div>
