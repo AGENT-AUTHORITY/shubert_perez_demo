@@ -1,0 +1,30 @@
+DEMOSTRACIÓN SHUBERT PÉREZ - AUTHORITY AGENTS
+=============================================
+
+Archivos:
+- index.html: sitio completo y adaptable a celulares
+- assets/hero.webp: imagen inicial
+- assets/victoria.webp: imagen de celebración con IA
+- assets/shubert-real.webp: fotografía histórica aportada en la conversación
+
+COMO ABRIR
+1. Hacé doble clic en index.html. Funciona sin publicar, incluso sin internet.
+2. Para subir a GitHub Pages: creá un repositorio, subí TODOS los archivos y carpetas, y activá Pages desde la rama principal.
+3. Para compartir al prospecto, mandá la URL pública de GitHub Pages.
+
+VIDEOS FLOW (DOS DE 8 SEGUNDOS)
+Colocá dentro de assets/ los archivos exactos:
+- flow-01.mp4
+- flow-02.mp4
+
+La experiencia de 16 segundos los detecta automáticamente cuando están disponibles.
+Si todavía no los cargaste, verás animaciones cinematográficas de las imágenes estáticas.
+Usar exportación MP4/H.264 recomendada, vertical 9:16, preferiblemente con audio embebido (el reproductor comienza silenciado por compatibilidad de navegadores).
+
+NOTAS
+- La demo es una propuesta conceptual, no un sitio autorizado por Shubert Pérez.
+- Las escenas de fútbol playa son recreaciones con IA, no fotos documentales del encuentro.
+- Información biográfica de la web pública del entrenador (schubert-e-perez.mystrikingly.com) y fuentes deportivas.
+- El correo público y el enlace a Instagram son los publicados / suministrados, respectivamente.
+- Los posibles servicios y colaboraciones están presentados como sugerencias, sujetos a confirmación.
+- Las fuentes tipográficas se cargan de Google Fonts; sin conexión se muestran tipografías del equipo.

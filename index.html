@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#070c13">
+  <meta name="description" content="Shubert Pérez. Una historia de liderazgo, formación y fútbol que llevó a Panamá a un momento histórico en 2017. Demo audiovisual conceptual.">
+  <meta property="og:title" content="Shubert Pérez | Una historia que trasciende la cancha">
+  <meta property="og:description" content="2017. Panamá 4–2 México. Un primer Mundial. Descubrí la trayectoria de Shubert Pérez.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/victoria.webp">
+  <title>Shubert Pérez — El legado detrás de la historia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--ink:#070c13;--ink2:#0c1420;--paper:#f2efe9;--line:rgba(255,255,255,.16);--muted:#a6afb9;--gold:#dcb879;--red:#e64849;--blue:#3b70bd;--max:1380px}
+    *,*::before,*::after{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:76px}
+    body{margin:0;background:var(--ink);color:#fff;font-family:'DM Sans',Arial,sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+    body.freeze{overflow:hidden}
+    ::selection{background:var(--gold);color:#0a1018}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit;cursor:pointer}
+    img,video{max-width:100%;display:block}
+    button:focus-visible,a:focus-visible{outline:2px solid #fbd49e;outline-offset:5px}
+    .wrap{max-width:var(--max);width:calc(100% - 104px);margin:auto}
+    .eyebrow{font-size:10px;letter-spacing:.31em;text-transform:uppercase;font-weight:700;color:var(--gold)}
+    .display{font-family:'Barlow Condensed','Arial Narrow',Impact,sans-serif;letter-spacing:-.012em;text-transform:uppercase;line-height:.85;margin:0;font-weight:800}
+    .outline{-webkit-text-stroke:1.35px rgba(255,255,255,.62);color:transparent}
+    .dark-outline{-webkit-text-stroke:1px rgba(9,17,27,.5);color:transparent}
+    .btn{display:inline-flex;gap:15px;align-items:center;justify-content:center;padding:16px 22px;border:1px solid transparent;text-transform:uppercase;letter-spacing:.12em;font-size:11px;font-weight:700;white-space:nowrap;transition:background .2s,border-color .2s,transform .2s}
+    .btn:hover{transform:translateY(-2px)}
+    .btn svg{width:17px;height:17px;flex:none}
+    .btn-gold{color:#071019;background:var(--gold)}.btn-gold:hover{background:#eccb92}
+    .btn-border{color:white;background:rgba(11,17,26,.24);border-color:rgba(255,255,255,.35)}.btn-border:hover{border-color:var(--gold)}
+    .btn-dark{background:#0c1420;color:white}.btn-dark:hover{background:#202c3b}
+    .nav{height:78px;display:flex;align-items:center;justify-content:space-between;position:fixed;top:0;left:0;right:0;z-index:40;padding:0 5%;border-bottom:1px solid rgba(255,255,255,.12);background:rgba(5,10,16,.62);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);transition:background .3s}
+    .nav.scrolled{background:rgba(5,10,16,.94)}
+    .logotype{display:flex;align-items:center;gap:14px;min-width:200px}
+    .logomark{display:grid;place-items:center;width:42px;height:42px;border:1px solid rgba(220,184,121,.55);font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px;letter-spacing:-.06em;color:var(--gold);position:relative}
+    .logomark:after{content:'';position:absolute;right:-4px;top:-4px;width:8px;height:8px;background:var(--red)}
+    .brandname{font-family:'Barlow Condensed';font-size:22px;font-weight:800;letter-spacing:.035em;text-transform:uppercase;line-height:1}
+    .brandmeta{margin-top:4px;color:#a7acb2;font-size:8px;letter-spacing:.22em;text-transform:uppercase}
+    .navlinks{display:flex;align-items:center;gap:34px;color:#d1d4da;font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase}
+    .navlinks a{transition:color .2s}.navlinks a:hover{color:var(--gold)}
+    .nav-btn{font-size:10px;padding:13px 17px}
+    .menubtn{display:none;border:1px solid var(--line);color:#fff;background:transparent;padding:10px 12px;font-size:22px;line-height:1}
+    .hero{min-height:800px;height:100svh;max-height:1200px;position:relative;isolation:isolate;display:flex;align-items:center;overflow:hidden}
+    .hero-photo{position:absolute;inset:0;z-index:-3;background:url('assets/hero.webp') 75% 28%/cover no-repeat;animation:heroDrift 18s ease-in-out infinite alternate}
+    @keyframes heroDrift{from{transform:scale(1.01)}to{transform:scale(1.075)}}
+    .hero:after{content:'';position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,#071019 2%,rgba(7,13,22,.96) 24%,rgba(7,13,22,.75) 45%,rgba(7,13,22,.20) 76%,rgba(7,13,22,.25)),linear-gradient(0deg,#071019 0%,transparent 23%,rgba(7,13,22,.08) 70%,rgba(7,13,22,.5))}
+    .hero-lines{position:absolute;inset:0;z-index:-1;background:repeating-linear-gradient(90deg,transparent 0,transparent calc(25% - 1px),rgba(255,255,255,.045) calc(25% - 1px),rgba(255,255,255,.045) 25%);pointer-events:none;opacity:.45}
+    .hero-content{position:relative;padding-top:74px;transform:translateY(-6px)}
+    .hero-topline{display:flex;align-items:center;gap:15px;margin-bottom:25px}
+    .hero-topline i{display:block;width:38px;height:2px;background:var(--gold)}
+    .hero h1{font-size:clamp(92px,11.7vw,192px);max-width:880px}
+    .hero h1 span{display:block}
+    .hero h1 .light{color:#fff}.hero h1 .accent{color:var(--gold)}
+    .hero p{max-width:475px;color:#d4d6d9;font-size:15px;line-height:1.9;margin:26px 0 32px}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:13px}
+    .hero-aside{position:absolute;right:5%;top:50%;transform:translateY(-50%);writing-mode:vertical-rl;letter-spacing:.29em;font-size:9px;color:#eee;text-transform:uppercase;display:flex;align-items:center;gap:20px;opacity:.85}
+    .hero-aside:before{content:'';display:block;height:70px;width:1px;background:var(--gold)}
+    .hero-bottom{position:absolute;bottom:0;left:0;right:0;border-top:1px solid rgba(255,255,255,.22);background:rgba(7,12,19,.54);backdrop-filter:blur(10px)}
+    .hero-bottom-inner{display:flex;align-items:stretch;min-height:95px}
+    .hb-item{display:flex;align-items:center;gap:14px;padding:18px 38px;border-right:1px solid rgba(255,255,255,.16)}
+    .hb-item:first-child{padding-left:0}.hb-item:last-child{border-right:0}
+    .hb-num{font-family:'Barlow Condensed';font-size:37px;font-weight:800;line-height:1;color:white}
+    .hb-num.gold{color:var(--gold)}
+    .hb-copy{color:#c2c8cf;line-height:1.55;letter-spacing:.13em;font-size:9px;font-weight:700;text-transform:uppercase}
+    .scroll-mark{margin-left:auto;display:flex;align-items:center;gap:12px;color:#cbd0d3;font-size:9px;letter-spacing:.17em;text-transform:uppercase}
+    .scroll-mark i{height:38px;width:1px;background:var(--gold)}
+    .section{position:relative;overflow:hidden}
+    .sectionhead{display:flex;align-items:flex-end;justify-content:space-between;gap:25px;margin-bottom:58px}
+    .sectionhead h2{font-size:clamp(70px,9vw,148px)}
+    .sectionhead p{max-width:330px;color:#a8b0bb;line-height:1.85;font-size:14px;margin:0 0 9px}
+    .section-number{font-family:'Barlow Condensed';font-size:13px;color:var(--gold);letter-spacing:.15em;margin-bottom:18px}
+    .history{padding:125px 0 0}
+    .history-title{margin-bottom:70px}
+    .history-main{display:grid;grid-template-columns:1.03fr .97fr;min-height:665px}
+    .history-image{position:relative;overflow:hidden}
+    .history-image img{width:100%;height:100%;object-fit:cover;object-position:center 39%;min-height:650px;transition:transform 1.3s}
+    .history-image:hover img{transform:scale(1.045)}
+    .history-image::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(7,12,19,.66),transparent 60%)}
+    .image-stamp{position:absolute;left:38px;bottom:36px;z-index:2;color:#fff;font-size:10px;letter-spacing:.18em;text-transform:uppercase}
+    .image-stamp span{display:block;color:var(--gold);margin-top:10px}
+    .history-story{padding:clamp(42px,6vw,106px);background:var(--paper);color:#0c1420;display:flex;flex-direction:column;justify-content:center;position:relative}
+    .history-story:before{content:'2017';font-family:'Barlow Condensed';font-weight:800;font-size:200px;position:absolute;top:4px;right:0;color:rgba(3,10,19,.035);pointer-events:none}
+    .history-story h3{font-family:'Barlow Condensed';font-size:clamp(56px,6vw,100px);font-weight:800;line-height:.94;text-transform:uppercase;letter-spacing:-.01em;margin:25px 0}
+    .history-story h3 em{font-style:normal;color:#b99762}
+    .history-story p{font-size:15px;line-height:1.9;max-width:470px;color:#46505b}
+    .score-inline{border-top:1px solid rgba(10,20,30,.2);margin-top:30px;padding-top:27px;display:flex;align-items:center;gap:23px;flex-wrap:wrap}
+    .score-inline b{font-family:'Barlow Condensed';font-size:81px;letter-spacing:.01em;line-height:1}
+    .score-inline span{font-size:10px;text-transform:uppercase;letter-spacing:.2em;line-height:1.6}
+    .score-inline .sep{color:#c1a16d}
+    .real{background:#101a27;padding:120px 0}
+    .real-layout{display:grid;grid-template-columns:minmax(340px,.94fr) 1.06fr;gap:clamp(35px,7vw,115px);align-items:center}
+    .real-photo{position:relative}
+    .real-photo:before{content:'';position:absolute;inset:-17px 17px 17px -17px;border:1px solid rgba(220,184,121,.4)}
+    .real-photo img{width:100%;aspect-ratio:1.15/1;object-fit:cover;object-position:48% 30%;filter:saturate(.85)}
+    .real-photo figcaption{margin:19px 0 0;color:#8897a7;text-transform:uppercase;letter-spacing:.13em;font-size:9px}
+    .real-copy h2{font-size:clamp(67px,7vw,120px);margin:20px 0 28px}
+    .real-copy h2 .outline{-webkit-text-stroke-color:rgba(255,255,255,.35)}
+    .real-copy p{color:#b8c1c9;line-height:2;font-size:15px;max-width:555px}
+    .signature{font-family:'Barlow Condensed';font-weight:800;letter-spacing:.06em;color:var(--gold);text-transform:uppercase;font-size:25px;margin-top:28px}
+    .timeline{padding:135px 0 145px;background:#080e17}
+    .timeline-head{margin-bottom:55px}
+    .timeline-grid{border-top:1px solid rgba(255,255,255,.17)}
+    .time-row{display:grid;grid-template-columns:180px 1fr 100px;gap:35px;padding:31px 14px;border-bottom:1px solid rgba(255,255,255,.15);align-items:center;transition:background .2s}
+    .time-row:hover{background:rgba(255,255,255,.035)}
+    .time-year{color:var(--gold);font-family:'Barlow Condensed';font-size:44px;font-weight:800}
+    .time-name{font-family:'Barlow Condensed';font-size:31px;font-weight:700;text-transform:uppercase;line-height:1.08}
+    .time-desc{color:#a0adb7;font-size:13px;line-height:1.7;margin-top:8px}
+    .time-icon{text-align:right;font-size:28px;color:#5f6b78;font-family:'Barlow Condensed'}
+    .capabilities{padding:125px 0 145px;background:var(--paper);color:#091321}
+    .capabilities .section-number,.capabilities .eyebrow{color:#aa8049}
+    .capabilities .sectionhead p{color:#606a72}
+    .cap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .cap{min-height:335px;padding:36px;position:relative;display:flex;flex-direction:column;justify-content:space-between;border:1px solid rgba(5,14,25,.2);background:#f9f7f2;transition:background .2s,transform .2s}
+    .cap:hover{background:white;transform:translateY(-5px)}
+    .capnum{font-family:'Barlow Condensed';font-size:18px;color:#b3945f}
+    .cap h3{font-family:'Barlow Condensed';font-size:48px;font-weight:800;line-height:.95;text-transform:uppercase;margin:20px 0}
+    .cap p{font-size:13px;line-height:1.85;color:#65707a;max-width:300px}
+    .cap-arrow{font-size:27px;color:#a98452;align-self:flex-end}
+    .manifesto{padding:150px 0;position:relative;min-height:650px;display:flex;align-items:center;background:linear-gradient(90deg,rgba(8,12,19,.95),rgba(8,12,19,.7),rgba(8,12,19,.5)),url('assets/victoria.webp') center 32%/cover}
+    .manifesto h2{font-size:clamp(75px,12vw,190px);max-width:1050px}
+    .manifesto h2 .accent{color:var(--gold)}
+    .manifesto p{max-width:600px;color:#d1d8de;line-height:1.9;font-size:16px;margin-top:30px}
+    .contact{padding:110px 0 125px;background:#101927}
+    .contact-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:65px;align-items:end}
+    .contact h2{font-size:clamp(79px,10.4vw,160px)}
+    .contact aside{padding-bottom:6px}
+    .contact aside p{font-size:15px;line-height:1.9;color:#b9c5cf}
+    .contact-links{margin-top:30px;display:flex;gap:12px;flex-wrap:wrap}
+    .contact-kicker{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:24px}
+    footer{background:#080d15;padding:26px 0;color:#83909e;border-top:1px solid var(--line)}
+    .footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center;font-size:10px;line-height:1.7}
+    .footer-inner b{color:#d6dce1;letter-spacing:.17em;text-transform:uppercase}
+    .demo-chip{position:fixed;bottom:19px;right:22px;background:rgba(5,12,19,.88);color:#c3ccd4;z-index:25;backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.14);font-size:9px;text-transform:uppercase;letter-spacing:.12em;padding:10px 13px}
+    .demo-chip i{width:6px;height:6px;background:var(--gold);display:inline-block;border-radius:50%;margin-right:7px}
+    .cinema{position:fixed;inset:0;z-index:100;background:#04070d;display:none;overflow:hidden;isolation:isolate}
+    .cinema.open{display:block}
+    .cinema-image,.cinema-video{position:absolute;width:100%;height:100%;inset:0;object-fit:cover;object-position:center 32%;z-index:-3}
+    .cinema-image{animation:cinemaZoom 8s linear both}
+    @keyframes cinemaZoom{from{transform:scale(1)}to{transform:scale(1.12)}}
+    .cinema-video{display:none}
+    .cinema-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,7,15,.92),rgba(0,7,15,.45) 57%,rgba(0,7,15,.25)),linear-gradient(0deg,rgba(0,4,9,.9),transparent 35%,rgba(0,0,0,.32));z-index:-1}
+    .cinema .cinema-top{display:flex;align-items:center;justify-content:space-between;padding:34px 5%;position:relative;z-index:3}
+    .cinema-logo{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.2em}
+    .cinema-close{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.55);padding:11px 14px;font-size:11px;letter-spacing:.15em;text-transform:uppercase}
+    .cinema-body{position:absolute;left:8%;right:8%;top:47%;transform:translateY(-50%);z-index:3;pointer-events:none}
+    .cinema-tag{font-size:12px;font-weight:700;color:var(--gold);letter-spacing:.26em;text-transform:uppercase}
+    .cinema h2{font-family:'Barlow Condensed';font-size:clamp(90px,15vw,235px);font-weight:800;line-height:.82;text-transform:uppercase;letter-spacing:-.018em;margin:26px 0;max-width:1100px;text-shadow:0 10px 35px rgba(0,0,0,.25)}
+    .cinema-sub{color:#f4f4f4;font-size:clamp(13px,1.5vw,20px);max-width:550px;line-height:1.7}
+    .cinema-bottom{position:absolute;bottom:36px;left:5%;right:5%;display:flex;align-items:center;gap:25px;z-index:4}
+    .cinema-progress{height:3px;flex:1;background:rgba(255,255,255,.3);position:relative;overflow:hidden}
+    .cinema-progress span{display:block;width:0;height:100%;background:var(--gold)}
+    .cinema-count{font-family:'Barlow Condensed';font-size:27px;font-weight:700}
+    .cinema-skip{background:transparent;color:white;border:0;letter-spacing:.14em;font-size:10px;text-transform:uppercase}
+    .cinema-actions{display:flex;gap:14px;align-items:center}
+    .cinema-end{display:none;position:absolute;inset:0;background:radial-gradient(circle at 50% 35%,rgba(40,64,88,.6),transparent 57%),#080e15;z-index:8;align-items:center;justify-content:center;text-align:center;padding:30px}
+    .cinema-end.show{display:flex}
+    .cinema-end h3{font-family:'Barlow Condensed';text-transform:uppercase;font-size:clamp(78px,13vw,170px);line-height:.86;margin:16px 0 28px}
+    .cinema-end p{max-width:580px;margin:auto auto 25px;color:#b7c0c9;line-height:1.9;font-size:15px}
+    .cinema-end-btns{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+    .reveal{opacity:0;transform:translateY(25px);transition:opacity .85s,transform .85s}
+    .reveal.visible{opacity:1;transform:none}
+    @media(max-width:1050px){.navlinks{gap:17px}.navlinks a{font-size:9px}.history-story{padding:48px}.hb-item{padding:16px 20px}.real-layout{gap:45px}.cap{padding:28px}}
+    @media(max-width:800px){.wrap{width:calc(100% - 42px)}.nav{height:66px;padding:0 21px}.brandname{font-size:20px}.logotype{gap:10px}.logomark{width:35px;height:35px;font-size:19px}.navlinks{display:none;position:absolute;top:66px;right:0;left:0;background:#070d15;padding:22px;flex-direction:column;align-items:flex-start;gap:25px;border-top:1px solid var(--line)}.navlinks.open{display:flex}.menubtn{display:block}.nav .nav-btn{display:none}.hero{min-height:790px;height:100svh}.hero-photo{background-position:63% 34%}.hero:after{background:linear-gradient(90deg,rgba(5,10,18,.92),rgba(5,10,18,.53) 66%,rgba(5,10,18,.20)),linear-gradient(0deg,#071019,transparent 24%,rgba(7,13,22,.15))}.hero h1{font-size:clamp(85px,15vw,139px)}.hero p{font-size:14px;max-width:440px}.hero-aside{display:none}.hero-bottom-inner{min-height:74px}.hb-item{padding:12px 19px}.hb-item:first-child{padding-left:0}.hb-num{font-size:28px}.hb-copy{font-size:8px}.hb-item:last-of-type{display:none}.scroll-mark{display:none}.sectionhead{display:block;margin-bottom:38px}.sectionhead p{margin-top:25px}.history{padding-top:90px}.history-title{margin-bottom:40px}.history-main{grid-template-columns:1fr}.history-image img{height:600px;min-height:0}.history-story{padding:50px 32px}.real{padding:85px 0}.real-layout{grid-template-columns:1fr;gap:65px}.real-photo{max-width:680px}.timeline{padding:90px 0 95px}.capabilities{padding:90px 0}.cap-grid{grid-template-columns:1fr}.cap{min-height:245px}.cap h3{font-size:42px}.manifesto{min-height:600px;padding:100px 0}.contact{padding:90px 0}.contact-grid{grid-template-columns:1fr;gap:25px}.contact aside{max-width:570px}.footer-inner{align-items:flex-start;flex-direction:column}.demo-chip{bottom:12px;right:12px}.cinema-body{left:6%;right:6%}.cinema h2{font-size:clamp(91px,18vw,160px)}}
+    @media(max-width:520px){.eyebrow{font-size:9px;letter-spacing:.23em}.hero{min-height:730px}.hero-content{transform:translateY(-20px)}.hero-photo{background-position:59% 45%}.hero:after{background:linear-gradient(90deg,rgba(5,10,18,.87),rgba(5,10,18,.45)),linear-gradient(0deg,#071019,transparent 27%,rgba(7,13,22,.3))}.hero h1{font-size:clamp(75px,20.3vw,115px)}.hero p{font-size:13px;margin:20px 0 26px;line-height:1.8}.btn{padding:14px 15px;font-size:9px;gap:8px}.hero-actions{gap:9px}.hero-bottom-inner{min-height:69px}.hb-item{padding:13px 11px}.hb-num{font-size:26px}.hb-copy{font-size:7px;letter-spacing:.08em}.sectionhead h2{font-size:clamp(68px,17vw,106px)}.history-image img{height:540px}.history-story{padding:45px 23px}.history-story h3{font-size:68px}.score-inline b{font-size:68px}.score-inline{gap:15px}.real-copy h2{font-size:clamp(69px,17vw,102px)}.real-photo:before{inset:-11px 11px 11px -11px}.time-row{grid-template-columns:76px 1fr 18px;gap:12px;padding:27px 0}.time-year{font-size:30px}.time-name{font-size:24px}.time-desc{font-size:11px}.cap{padding:25px;min-height:220px}.cap h3{font-size:37px}.manifesto h2{font-size:clamp(77px,17vw,120px)}.manifesto p{font-size:14px}.contact h2{font-size:clamp(76px,18vw,119px)}.cinema h2{font-size:clamp(83px,19vw,124px)}.cinema-body{top:48%}.cinema-top{padding:23px 5%!important}.cinema-bottom{bottom:24px;gap:10px}.cinema-tag{font-size:10px}.cinema-sub{font-size:13px}.cinema-skip{font-size:9px}.cinema-end h3{font-size:clamp(80px,16vw,120px)}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
+  </style>
+</head>
+<body>
+  <header class="nav" id="topnav">
+    <a class="logotype" href="#inicio" aria-label="Shubert Pérez, inicio"><span class="logomark">SP</span><span><span class="brandname">Shubert Pérez</span><span class="brandmeta">The coach · The legacy</span></span></a>
+    <nav class="navlinks" id="navlinks" aria-label="Navegación principal"><a href="#historia">El momento</a><a href="#persona">El entrenador</a><a href="#trayectoria">Trayectoria</a><a href="#colaboraciones">Colaboraciones</a></nav>
+    <a class="btn btn-border nav-btn" href="#contacto">Conectar <span aria-hidden="true">↗</span></a>
+    <button class="menubtn" id="menubtn" aria-label="Abrir menú" aria-expanded="false" aria-controls="navlinks">☰</button>
+  </header>
+  <main>
+    <section class="hero" id="inicio" aria-labelledby="heroTitle">
+      <div class="hero-photo" aria-hidden="true"></div><div class="hero-lines" aria-hidden="true"></div>
+      <div class="wrap hero-content">
+        <div class="hero-topline"><i></i><span class="eyebrow">Panamá · Concacaf · Bahamas 2017</span></div>
+        <h1 class="display" id="heroTitle"><span class="light">NO FUE</span><span class="outline">SOLO UNA</span><span class="accent">FINAL.</span></h1>
+        <p>Fue el comienzo de una página inédita para el fútbol playa panameño. Una historia de preparación, convicción y liderazgo. Y un entrenador detrás de ese momento.</p>
+        <div class="hero-actions">
+          <button class="btn btn-gold" data-play type="button"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5 20 12 7 19.5z"/></svg>Vivir la historia <span>16 s</span></button>
+          <a class="btn btn-border" href="#historia">Explorar su legado <span aria-hidden="true">↓</span></a>
+        </div>
+      </div>
+      <div class="hero-aside">Una historia que merece ser contada</div>
+      <div class="hero-bottom"><div class="wrap hero-bottom-inner"><div class="hb-item"><strong class="hb-num gold">2017</strong><span class="hb-copy">El año que<br>hizo historia</span></div><div class="hb-item"><strong class="hb-num">4—2</strong><span class="hb-copy">Panamá vs.<br>México</span></div><div class="hb-item"><strong class="hb-num">01</strong><span class="hb-copy">Primer Mundial<br>de fútbol playa</span></div><span class="scroll-mark"><i></i>Deslizá para descubrir</span></div></div>
+    </section>
+    <section class="section history" id="historia">
+      <div class="wrap history-title reveal"><div class="section-number">01 / EL MOMENTO</div><div class="sectionhead"><h2 class="display">UNA VICTORIA.<br><span class="outline">UNA PRIMERA VEZ.</span></h2><p>Hay resultados que duran un partido. Y hay otros que abren una puerta para todo un país.</p></div></div>
+      <div class="history-main"><div class="history-image"><img src="assets/victoria.webp" loading="lazy" width="941" height="1672" alt="Recreación cinematográfica con IA del entrenador Shubert Pérez durante una celebración deportiva"><div class="image-stamp">Panamá · Fútbol playa <span>Recreación visual conceptual con IA</span></div></div><div class="history-story"><span class="eyebrow">Bahamas · Febrero de 2017</span><h3>EL PARTIDO<br>QUE <em>CAMBIÓ</em><br>EL MAPA.</h3><p>Panamá derrotó 4 a 2 a México en la final del Campeonato de Fútbol Playa de Concacaf. Con Shubert Pérez como director técnico, la selección obtuvo el título regional y se ganó el derecho a disputar por primera vez una Copa Mundial de esta disciplina.</p><div class="score-inline"><span>Panamá</span><b>4</b><b class="sep">—</b><b>2</b><span>México<br>Final 2017</span></div></div></div>
+    </section>
+    <section class="section real" id="persona"><div class="wrap real-layout"><figure class="real-photo reveal"><img src="assets/shubert-real.webp" loading="lazy" width="1024" height="683" alt="Fotografía de archivo del entrenador Shubert Pérez con gorra roja, durante su actividad en fútbol playa"><figcaption>Fotografía de archivo proporcionada como referencia</figcaption></figure><div class="real-copy reveal"><span class="eyebrow">Detrás del resultado hay una trayectoria</span><h2 class="display">LA EXPERIENCIA<br><span class="outline">NO SE</span><br>IMPROVISA.</h2><p>De la formación de futbolistas al trabajo con selecciones nacionales. De Panamá a Arabia Saudita. La carrera de Shubert Pérez reúne dirección técnica, desarrollo deportivo, gestión y preparación de equipos en diferentes etapas y contextos.</p><p>Una historia que no se explica con un marcador. Pero que ese marcador ayuda a contar.</p><div class="signature">Shubert Pérez <span style="font-family:'DM Sans';font-size:10px;letter-spacing:.12em;color:#acb6c0;margin-left:12px;font-weight:500">Director técnico</span></div></div></div></section>
+    <section class="section timeline" id="trayectoria"><div class="wrap"><div class="section-number">02 / TRAYECTORIA</div><div class="sectionhead timeline-head reveal"><h2 class="display">LA HISTORIA<br><span class="outline">COMPLETA.</span></h2><p>Una selección de hitos registrados en su trayectoria profesional pública.</p></div><div class="timeline-grid">
+      <div class="time-row reveal"><div class="time-year">1995</div><div><div class="time-name">Primeros pasos en Panamá</div><div class="time-desc">Inicio de la experiencia registrada como entrenador en Atlético Veragüense.</div></div><div class="time-icon">↗</div></div>
+      <div class="time-row reveal"><div class="time-year">2001</div><div><div class="time-name">Selección femenina Sub-19</div><div class="time-desc">Experiencia al frente del seleccionado nacional femenino Sub-19 de Panamá (2001–2002).</div></div><div class="time-icon">↗</div></div>
+      <div class="time-row reveal"><div class="time-year">2015</div><div><div class="time-name">Un proyecto en la arena</div><div class="time-desc">Proceso con la selección panameña de fútbol playa y participación en el premundial de Concacaf.</div></div><div class="time-icon">↗</div></div>
+      <div class="time-row reveal"><div class="time-year">2017</div><div><div class="time-name">Campeones. Mundialistas.</div><div class="time-desc">Campeón de Concacaf ante México y clasificación al primer Mundial de fútbol playa de Panamá.</div></div><div class="time-icon">★</div></div>
+      <div class="time-row reveal"><div class="time-year">2018</div><div><div class="time-name">Experiencia internacional</div><div class="time-desc">Al-Jabalain Sport Club, Arabia Saudita (2018–2019).</div></div><div class="time-icon">↗</div></div>
+      <div class="time-row reveal"><div class="time-year">2023</div><div><div class="time-name">Nuevos desafíos en clubes</div><div class="time-desc">Oxford Soccer Club, liga profesional de Panamá (2023–2024).</div></div><div class="time-icon">↗</div></div>
+    </div></div></section>
+    <section class="section capabilities" id="colaboraciones"><div class="wrap"><div class="section-number">03 / EL PRÓXIMO CAPÍTULO</div><div class="sectionhead reveal"><h2 class="display">EL CONOCIMIENTO<br><span class="dark-outline">TAMBIÉN DEJA HUELLA.</span></h2><p>Posibles formatos para compartir una experiencia construida dentro y fuera de la cancha.</p></div><div class="cap-grid">
+      <article class="cap reveal"><span class="capnum">01 / INTERCAMBIO DE EXPERIENCIAS</span><div><h3>CHARLAS Y<br>CONFERENCIAS</h3><p>Experiencias de liderazgo, construcción de equipos y recorrido internacional en el fútbol.</p></div><span class="cap-arrow" aria-hidden="true">↗</span></article>
+      <article class="cap reveal"><span class="capnum">02 / FORMACIÓN DEPORTIVA</span><div><h3>CLÍNICAS Y<br>CAPACITACIONES</h3><p>Espacios para entrenadores, academias y proyectos formativos que buscan perspectiva técnica.</p></div><span class="cap-arrow" aria-hidden="true">↗</span></article>
+      <article class="cap reveal"><span class="capnum">03 / DESARROLLO DEPORTIVO</span><div><h3>ASESORÍA Y<br>PROYECTOS</h3><p>Conversaciones con clubes, instituciones y organizaciones sobre metodologías y desarrollo del fútbol.</p></div><span class="cap-arrow" aria-hidden="true">↗</span></article>
+    </div><p style="font-size:11px;color:#76818b;line-height:1.8;margin-top:20px">Áreas sugeridas para una futura presentación profesional. Disponibilidad, condiciones y servicios sujetos a confirmación por Shubert Pérez.</p></div></section>
+    <section class="section manifesto"><div class="wrap reveal"><span class="eyebrow">El futuro también se entrena</span><h2 class="display">LOS TÍTULOS<br>SE CELEBRAN.<br><span class="accent">EL LEGADO</span><br>SE COMPARTE.</h2><p>Porque detrás de cada resultado hay decisiones, aprendizajes y una visión que vale la pena transmitir.</p><button class="btn btn-gold" data-play type="button"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5 20 12 7 19.5z"/></svg>Revivir el momento</button></div></section>
+    <section class="section contact" id="contacto"><div class="wrap contact-grid"><div class="reveal"><div class="contact-kicker">04 / CONEXIONES QUE IMPORTAN</div><h2 class="display">HABLEMOS<br><span class="outline">DEL PRÓXIMO</span><br>DESAFÍO.</h2></div><aside class="reveal"><p>La experiencia cobra una nueva dimensión cuando encuentra un proyecto donde aportar. Si representás un club, academia, federación u organización deportiva, este puede ser el inicio de una conversación.</p><div class="contact-links"><a href="mailto:shpesi2017@gmail.com?subject=Consulta%20profesional%20para%20Shubert%20P%C3%A9rez" class="btn btn-gold">Escribir por correo ↗</a><a href="https://www.instagram.com/shubertenriqueperez/" target="_blank" rel="noopener noreferrer" class="btn btn-border">Instagram ↗</a></div></aside></div></section>
+  </main>
+  <footer><div class="wrap footer-inner"><div><b>Shubert Pérez</b><div>Propuesta audiovisual y web conceptual para presentación privada. No representa un sitio oficial ni implica aprobación del protagonista.</div></div><div>Creado como demo por Authority Agents. Imágenes dramatizadas con IA.<br>Datos biográficos: web pública de Shubert Pérez y registros deportivos de Fepafut/Concacaf.</div></div></footer>
+  <div class="demo-chip" aria-label="Presentación conceptual"><i></i>Concepto visual · Demo</div>
+  <div class="cinema" id="cinema" role="dialog" aria-modal="true" aria-labelledby="cinemaTitle" aria-hidden="true">
+    <img class="cinema-image" id="cinemaImage" src="assets/hero.webp" alt="Secuencia cinematográfica del entrenador en un estadio de fútbol playa">
+    <video class="cinema-video" id="cinemaVideo" playsinline preload="none" muted aria-hidden="true"></video>
+    <div class="cinema-shade"></div>
+    <div class="cinema-top"><div class="cinema-logo">SP / EL LEGADO · UNA EXPERIENCIA</div><button class="cinema-close" id="cinemaClose">Cerrar ✕</button></div>
+    <div class="cinema-body"><div class="cinema-tag" id="cinemaTag">Panamá · 2017</div><h2 id="cinemaTitle">NO FUE<br>SOLO UNA<br>FINAL.</h2><div class="cinema-sub" id="cinemaSub">Fue la oportunidad de escribir una primera página para todo un país.</div></div>
+    <div class="cinema-bottom"><span class="cinema-count" id="cinemaCount">01 / 02</span><div class="cinema-progress"><span id="cinemaProgress"></span></div><div class="cinema-actions"><button class="cinema-skip" id="cinemaSkip">Omitir ↗</button></div></div>
+    <div class="cinema-end" id="cinemaEnd"><div><div class="eyebrow">El hombre detrás del resultado</div><h3>SHUBERT<br><span style="color:var(--gold)">PÉREZ.</span></h3><p>Una historia de fútbol, liderazgo y legado. Y la oportunidad de contar lo que viene.</p><div class="cinema-end-btns"><button class="btn btn-border" id="cinemaReplay">↺ Ver otra vez</button><button class="btn btn-gold" id="cinemaContinue">Explorar la historia ↓</button></div></div></div>
+  </div>
+  <script>
+    (() => {
+      'use strict';
+      const q = s => document.querySelector(s);
+      const nav = q('#topnav');
+      const menu = q('#menubtn');
+      const links = q('#navlinks');
+      addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 30), {passive:true});
+      menu.addEventListener('click', () => {const open=links.classList.toggle('open');menu.setAttribute('aria-expanded', String(open));menu.textContent=open?'✕':'☰'});
+      links.querySelectorAll('a').forEach(a => a.addEventListener('click',()=>{links.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.textContent='☰'}));
+      const observer = new IntersectionObserver(entries => entries.forEach(entry => {if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+      const cinema=q('#cinema'), img=q('#cinemaImage'), video=q('#cinemaVideo'), progress=q('#cinemaProgress'), end=q('#cinemaEnd');
+      const scenes=[
+        {img:'assets/hero.webp',video:'assets/flow-01.mp4',tag:'ANTES DE LA HISTORIA · 2017',title:'NO FUE<br>SOLO UNA<br>FINAL.',subtitle:'Era un equipo dispuesto a disputar un lugar que Panamá nunca había ocupado.'},
+        {img:'assets/victoria.webp',video:'assets/flow-02.mp4',tag:'PANAMÁ 4 — 2 MÉXICO · CONCACAF 2017',title:'FUIMOS<br><span style="color:var(--gold)">CAMPEONES.</span>',subtitle:'Y Panamá consiguió su primera clasificación a un Mundial de fútbol playa.'}
+      ];
+      let t0=0,frame=0,sceneIndex=-1,active=false,previousFocus=null;
+      const duration=8000;
+      function setScene(n){
+        sceneIndex=n;
+        let s=scenes[n];
+        img.style.display='block';img.src=s.img;img.style.animation='none';void img.offsetWidth;img.style.animation='cinemaZoom 8s linear both';
+        q('#cinemaTag').textContent=s.tag;q('#cinemaTitle').innerHTML=s.title;q('#cinemaSub').textContent=s.subtitle;
+        q('#cinemaCount').textContent=('0'+(n+1)).slice(-2)+' / 02';
+        video.pause();video.removeAttribute('src');video.style.display='none';video.load();
+        // Si agregás los MP4 de Flow a /assets, se reproducen automáticamente.
+        video.onloadeddata=()=>{if(!active||sceneIndex!==n)return;video.style.display='block';video.currentTime=0;video.play().catch(()=>{video.style.display='none'})};
+        video.onerror=()=>{video.style.display='none'};
+        video.src=s.video;video.load();
+        t0=performance.now();
+      }
+      function tick(now){
+        if(!active)return;
+        const elapsed=now-t0;
+        const pct=Math.max(0,Math.min(100,((sceneIndex*duration+elapsed)/(duration*2))*100));
+        progress.style.width=pct+'%';
+        if(elapsed>=duration){
+          if(sceneIndex===0){setScene(1)}else{finish();return}
+        }
+        frame=requestAnimationFrame(tick);
+      }
+      function start(){
+        cancelAnimationFrame(frame);previousFocus=document.activeElement;
+        cinema.classList.add('open');cinema.setAttribute('aria-hidden','false');document.body.classList.add('freeze');
+        end.classList.remove('show');active=true;progress.style.width='0%';setScene(0);frame=requestAnimationFrame(tick);q('#cinemaClose').focus();
+      }
+      function finish(){
+        active=false;cancelAnimationFrame(frame);video.pause();video.style.display='none';progress.style.width='100%';end.classList.add('show');q('#cinemaContinue').focus();
+      }
+      function close(scrollToHistory=false){
+        active=false;cancelAnimationFrame(frame);video.pause();cinema.classList.remove('open');cinema.setAttribute('aria-hidden','true');end.classList.remove('show');document.body.classList.remove('freeze');
+        if(scrollToHistory){q('#historia').scrollIntoView({behavior:'smooth'})}else if(previousFocus && typeof previousFocus.focus==='function'){previousFocus.focus()}
+      }
+      document.querySelectorAll('[data-play]').forEach(b=>b.addEventListener('click',start));
+      q('#cinemaClose').addEventListener('click',()=>close());q('#cinemaSkip').addEventListener('click',finish);
+      q('#cinemaReplay').addEventListener('click',start);q('#cinemaContinue').addEventListener('click',()=>close(true));
+      document.addEventListener('keydown', e=>{if(e.key==='Escape'&&cinema.classList.contains('open'))close()});
+    })();
+  </script>
+</body>
+</html>
