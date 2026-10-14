@@ -140,11 +140,15 @@
     .demo-chip i{width:6px;height:6px;background:var(--gold);display:inline-block;border-radius:50%;margin-right:7px}
     .cinema{position:fixed;inset:0;z-index:100;background:#04070d;display:none;overflow:hidden;isolation:isolate}
     .cinema.open{display:block}
-    .cinema-image,.cinema-video{position:absolute;width:100%;height:100%;inset:0;object-fit:cover;object-position:center 32%;z-index:-3}
+    .cinema-image,.cinema-video{position:absolute;width:100%;height:100%;inset:0;object-fit:cover;object-position:center 32%;z-index:0}
     .cinema-image{animation:cinemaZoom 8s linear both}
     @keyframes cinemaZoom{from{transform:scale(1)}to{transform:scale(1.12)}}
     .cinema-video{display:none}
-    .cinema-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,7,15,.92),rgba(0,7,15,.45) 57%,rgba(0,7,15,.25)),linear-gradient(0deg,rgba(0,4,9,.9),transparent 35%,rgba(0,0,0,.32));z-index:-1}
+    .cinema-status{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#ded7c9;min-width:145px;text-align:right}
+    .cinema-status:empty{display:none}
+    .cinema-sound{background:rgba(5,11,19,.5);color:#fff;border:1px solid rgba(255,255,255,.45);padding:9px 11px;font-size:10px;letter-spacing:.09em;white-space:nowrap}
+    .cinema-sound[hidden]{display:none!important}
+    .cinema-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,7,15,.92),rgba(0,7,15,.45) 57%,rgba(0,7,15,.25)),linear-gradient(0deg,rgba(0,4,9,.9),transparent 35%,rgba(0,0,0,.32));z-index:1;pointer-events:none}
     .cinema .cinema-top{display:flex;align-items:center;justify-content:space-between;padding:34px 5%;position:relative;z-index:3}
     .cinema-logo{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.2em}
     .cinema-close{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.55);padding:11px 14px;font-size:11px;letter-spacing:.15em;text-transform:uppercase}
@@ -218,11 +222,11 @@
   <div class="demo-chip" aria-label="Presentación conceptual"><i></i>Concepto visual · Demo</div>
   <div class="cinema" id="cinema" role="dialog" aria-modal="true" aria-labelledby="cinemaTitle" aria-hidden="true">
     <img class="cinema-image" id="cinemaImage" src="assets/hero.webp" alt="Secuencia cinematográfica del entrenador en un estadio de fútbol playa">
-    <video class="cinema-video" id="cinemaVideo" playsinline preload="none" muted aria-hidden="true"></video>
+    <video class="cinema-video" id="cinemaVideo" playsinline webkit-playsinline preload="auto" muted aria-hidden="true"></video>
     <div class="cinema-shade"></div>
     <div class="cinema-top"><div class="cinema-logo">SP / EL LEGADO · UNA EXPERIENCIA</div><button class="cinema-close" id="cinemaClose">Cerrar ✕</button></div>
     <div class="cinema-body"><div class="cinema-tag" id="cinemaTag">Panamá · 2017</div><h2 id="cinemaTitle">NO FUE<br>SOLO UNA<br>FINAL.</h2><div class="cinema-sub" id="cinemaSub">Fue la oportunidad de escribir una primera página para todo un país.</div></div>
-    <div class="cinema-bottom"><span class="cinema-count" id="cinemaCount">01 / 02</span><div class="cinema-progress"><span id="cinemaProgress"></span></div><div class="cinema-actions"><button class="cinema-skip" id="cinemaSkip">Omitir ↗</button></div></div>
+    <div class="cinema-bottom"><span class="cinema-count" id="cinemaCount">01 / 02</span><div class="cinema-progress"><span id="cinemaProgress"></span></div><span class="cinema-status" id="cinemaStatus" aria-live="polite"></span><div class="cinema-actions"><button class="cinema-sound" id="cinemaSound" type="button" hidden>Activar sonido</button><button class="cinema-skip" id="cinemaSkip">Omitir ↗</button></div></div>
     <div class="cinema-end" id="cinemaEnd"><div><div class="eyebrow">El hombre detrás del resultado</div><h3>SHUBERT<br><span style="color:var(--gold)">PÉREZ.</span></h3><p>Una historia de fútbol, liderazgo y legado. Y la oportunidad de contar lo que viene.</p><div class="cinema-end-btns"><button class="btn btn-border" id="cinemaReplay">↺ Ver otra vez</button><button class="btn btn-gold" id="cinemaContinue">Explorar la historia ↓</button></div></div></div>
   </div>
   <script>
@@ -237,52 +241,111 @@
       links.querySelectorAll('a').forEach(a => a.addEventListener('click',()=>{links.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.textContent='☰'}));
       const observer = new IntersectionObserver(entries => entries.forEach(entry => {if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.1,rootMargin:'0px 0px -40px 0px'});
       document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-      const cinema=q('#cinema'), img=q('#cinemaImage'), video=q('#cinemaVideo'), progress=q('#cinemaProgress'), end=q('#cinemaEnd');
+      const cinema=q('#cinema'), img=q('#cinemaImage'), video=q('#cinemaVideo');
+      const progress=q('#cinemaProgress'), end=q('#cinemaEnd');
+      const status=q('#cinemaStatus'), sound=q('#cinemaSound');
       const scenes=[
         {img:'assets/hero.webp',video:'assets/flow-01.mp4',tag:'ANTES DE LA HISTORIA · 2017',title:'NO FUE<br>SOLO UNA<br>FINAL.',subtitle:'Era un equipo dispuesto a disputar un lugar que Panamá nunca había ocupado.'},
         {img:'assets/victoria.webp',video:'assets/flow-02.mp4',tag:'PANAMÁ 4 — 2 MÉXICO · CONCACAF 2017',title:'FUIMOS<br><span style="color:var(--gold)">CAMPEONES.</span>',subtitle:'Y Panamá consiguió su primera clasificación a un Mundial de fútbol playa.'}
       ];
-      let t0=0,frame=0,sceneIndex=-1,active=false,previousFocus=null;
-      const duration=8000;
+      const duration=8; // segundos de cada video de Flow
+      const timeout=12000; // tiempo máximo de carga antes de usar la imagen de respaldo
+      const debug=new URLSearchParams(location.search).has('debug');
+      let frame=0,sceneIndex=-1,active=false,previousFocus=null;
+      let sceneMode='loading',sceneStart=0,loadingStart=0,token=0,withSound=false,playRequested=false;
+      function showStatus(message){status.textContent=message;}
+      function fallback(reason, id){
+        if(!active || id!==token || sceneMode==='image')return;
+        if(debug) console.warn('Demo Shubert: mostrando imagen de respaldo:',reason,scenes[sceneIndex].video);
+        video.pause();video.style.display='none';sound.hidden=true;
+        sceneMode='image';sceneStart=performance.now();
+        showStatus(debug ? 'Respaldo: '+reason : '');
+      }
+      function updateSound(){
+        video.muted=!withSound;
+        sound.textContent=withSound ? 'Silenciar' : 'Activar sonido';
+      }
       function setScene(n){
+        const id=++token;
         sceneIndex=n;
-        let s=scenes[n];
-        img.style.display='block';img.src=s.img;img.style.animation='none';void img.offsetWidth;img.style.animation='cinemaZoom 8s linear both';
+        const s=scenes[n];
+        img.src=s.img;
+        img.style.display='block';img.style.animation='none';void img.offsetWidth;
+        img.style.animation='cinemaZoom 8s linear both';
         q('#cinemaTag').textContent=s.tag;q('#cinemaTitle').innerHTML=s.title;q('#cinemaSub').textContent=s.subtitle;
-        q('#cinemaCount').textContent=('0'+(n+1)).slice(-2)+' / 02';
-        video.pause();video.removeAttribute('src');video.style.display='none';video.load();
-        // Si agregás los MP4 de Flow a /assets, se reproducen automáticamente.
-        video.onloadeddata=()=>{if(!active||sceneIndex!==n)return;video.style.display='block';video.currentTime=0;video.play().catch(()=>{video.style.display='none'})};
-        video.onerror=()=>{video.style.display='none'};
+        q('#cinemaCount').textContent=String(n+1).padStart(2,'0')+' / 02';
+        video.pause();
+        video.oncanplay=null;video.onloadeddata=null;video.onplaying=null;video.onended=null;video.onerror=null;
+        video.removeAttribute('src');video.load();
+        video.style.display='none';sound.hidden=true;
+        sceneMode='loading';playRequested=false;loadingStart=performance.now();showStatus('Preparando video…');
+        // La cuenta de 8 s comienza SOLO cuando el video empieza, no durante su descarga.
+        function startVideo(){
+          if(!active || id!==token || sceneMode!=='loading' || video.readyState<2 || playRequested)return;
+          playRequested=true;video.currentTime=0;
+          updateSound();
+          const attempt=video.play();
+          if(attempt && typeof attempt.catch==='function'){
+            attempt.catch(err=>fallback('reproducción bloqueada: '+err.name,id));
+          }
+        }
+        video.onloadeddata=startVideo;
+        video.oncanplay=startVideo;
+        video.onplaying=()=>{
+          if(!active || id!==token || sceneMode!=='loading')return;
+          sceneMode='video';video.style.display='block';sound.hidden=false;
+          showStatus('');
+        };
+        video.onended=()=>{if(active && id===token && sceneMode==='video')nextScene();};
+        video.onerror=()=>{if(active && id===token)fallback('archivo no encontrado o codec incompatible',id);};
         video.src=s.video;video.load();
-        t0=performance.now();
+        if(video.readyState>=2)startVideo();
+      }
+      function nextScene(){
+        if(sceneIndex===0)setScene(1);else finish();
       }
       function tick(now){
         if(!active)return;
-        const elapsed=now-t0;
-        const pct=Math.max(0,Math.min(100,((sceneIndex*duration+elapsed)/(duration*2))*100));
-        progress.style.width=pct+'%';
-        if(elapsed>=duration){
-          if(sceneIndex===0){setScene(1)}else{finish();return}
+        let done=0;
+        if(sceneMode==='loading'){
+          if(now-loadingStart>timeout)fallback('tiempo de carga agotado',token);
+        } else if(sceneMode==='video'){
+          done=Math.min(1,video.currentTime/duration);
+          if(video.currentTime>=duration-.05){nextScene();done=0;}
+        } else {
+          done=Math.min(1,(now-sceneStart)/(duration*1000));
+          if(done>=1){nextScene();done=0;}
         }
-        frame=requestAnimationFrame(tick);
+        const total=Math.max(0,Math.min(100,((sceneIndex+done)/scenes.length)*100));
+        progress.style.width=total+'%';
+        if(active)frame=requestAnimationFrame(tick);
       }
       function start(){
         cancelAnimationFrame(frame);previousFocus=document.activeElement;
         cinema.classList.add('open');cinema.setAttribute('aria-hidden','false');document.body.classList.add('freeze');
-        end.classList.remove('show');active=true;progress.style.width='0%';setScene(0);frame=requestAnimationFrame(tick);q('#cinemaClose').focus();
+        end.classList.remove('show');active=true;progress.style.width='0%';
+        setScene(0);frame=requestAnimationFrame(tick);q('#cinemaClose').focus();
       }
       function finish(){
-        active=false;cancelAnimationFrame(frame);video.pause();video.style.display='none';progress.style.width='100%';end.classList.add('show');q('#cinemaContinue').focus();
+        active=false;cancelAnimationFrame(frame);++token;
+        video.pause();video.style.display='none';sound.hidden=true;showStatus('');
+        progress.style.width='100%';end.classList.add('show');q('#cinemaContinue').focus();
       }
       function close(scrollToHistory=false){
-        active=false;cancelAnimationFrame(frame);video.pause();cinema.classList.remove('open');cinema.setAttribute('aria-hidden','true');end.classList.remove('show');document.body.classList.remove('freeze');
-        if(scrollToHistory){q('#historia').scrollIntoView({behavior:'smooth'})}else if(previousFocus && typeof previousFocus.focus==='function'){previousFocus.focus()}
+        active=false;cancelAnimationFrame(frame);++token;
+        video.pause();video.style.display='none';sound.hidden=true;showStatus('');
+        cinema.classList.remove('open');cinema.setAttribute('aria-hidden','true');
+        end.classList.remove('show');document.body.classList.remove('freeze');
+        if(scrollToHistory)q('#historia').scrollIntoView({behavior:'smooth'});
+        else if(previousFocus && typeof previousFocus.focus==='function')previousFocus.focus();
       }
+      sound.addEventListener('click',()=>{
+        withSound=!withSound;updateSound();
+      });
       document.querySelectorAll('[data-play]').forEach(b=>b.addEventListener('click',start));
       q('#cinemaClose').addEventListener('click',()=>close());q('#cinemaSkip').addEventListener('click',finish);
       q('#cinemaReplay').addEventListener('click',start);q('#cinemaContinue').addEventListener('click',()=>close(true));
-      document.addEventListener('keydown', e=>{if(e.key==='Escape'&&cinema.classList.contains('open'))close()});
+      document.addEventListener('keydown',e=>{if(e.key==='Escape'&&cinema.classList.contains('open'))close()});
     })();
   </script>
 </body>
